@@ -13,7 +13,7 @@ bin/
 .project
 .vscode
 *.code-workspace
-src/main/resources/application.yml
+#src/main/resources/application.yml
 .bloop
 .metals
 .factorypath

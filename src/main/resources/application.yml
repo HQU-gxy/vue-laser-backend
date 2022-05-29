@@ -8,6 +8,15 @@ spring:
     time-zone: GMT+8
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
+    #数据库连接地址
+    url: jdbc:mysql://127.0.0.1:3306/battle?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2b8
+    #数据库密码
+    username: root
+    #数据库用户名
+    # dbname : battle
+    # password: yuyingpeng
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
     initialSize: 1
     maxActive: 20
     maxOpenPreparedStatements: 20
@@ -19,24 +28,23 @@ spring:
     testOnReturn: false
     testWhileIdle: true
     timeBetweenEvictionRunsMillis: 60000
-    type: com.alibaba.druid.pool.DruidDataSource
-    #数据库连接地址
-    url: jdbc:mysql://example.com:3306/battle?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2b8
-    #数据库密码
-    username: root
-    #数据库用户名
-    # dbname : battle
-    # password: yuyingpeng
-    password: your_password
+
     validation-query: select 1
     validationQuery: select 'x'
   application:
     name: soldier-confrontation-drill-system
+chirp-stack:
+  baseURL: http://192.168.1.103:8080
+  #baseURL: http://127.0.0.1:8080
+  email: admin
+  password: admin
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5X2lkIjoiNzQyN2Y4ZTUtZTA4Zi00ZTI2LWI2M2MtNDViOTRlOTIxOTFlIiwiYXVkIjoiYXMiLCJpc3MiOiJhcyIsIm5iZiI6MTY1MzcyNTc3MSwic3ViIjoiYXBpX2tleSJ9.9ZSSfJYSXWTvC2tdUvYo0cB9JKfgA2yska6uv9Cucss
+  applicationID: 2
 
 #mqtt配置
 mq:
   #host: tcp://154.223.172.167:1883
-  host: tcp://example.com:1883
+  host: tcp://127.0.0.1:1883
   clientId: client_1
   topic: application/2/device/+/rx
   qos: 2
@@ -85,4 +93,4 @@ MAP_DIR: d:/mapImg/
 LINUX_MAP_DIR: /usr/local/JiGuangPicture/
 
 # 是否运行在linux系统，0为windows，1为linux
-IN_LINUX: 0
+IN_LINUX: 1
